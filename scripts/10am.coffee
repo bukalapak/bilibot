@@ -8,8 +8,23 @@ module.exports = (robot) ->
         fri: ["rizal", "pras", "dani"]
 
     days = ["sun", "mon", "tue", "wed", "thu", "fri"]
+    bhs_to_eng =
+        senin: "mon"
+        selasa: "tue"
+        rabu: "wed"
+        kamis: "thu"
+        jumat: "fri"
 
-    robot.respond /siapa yang bawa snack hari ini/i, (msg) ->
-        today = new Date()
-        peoples = assignments[days[today.getDay()]].join(", ")
-        msg.send (peoples + " hari ini bawa snack ya :wink:")
+    robot.respond /siapa yang bawa snack hari (.*)/i, (msg) ->
+        day = msg.match[1]
+        pesan = " hari #{day} bawa snack ya :wink:"
+        if day is "ini"
+            today = new Date()
+            peoples = assignments[days[today.getDay()]].join(", ")
+            msg.send (peoples + pesan)
+        else 
+            peoples = assignments[bhs_to_eng[day]]
+            if peoples is undefined
+                msg.send "ga ada yang bawa snack hari itu"
+            else
+                msg.send peoples.join(", ") + pesan
