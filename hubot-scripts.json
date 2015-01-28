@@ -1,5 +1,29 @@
-["9gag.coffee", "abstract.coffee", "advice.coffee",  
- "applause.coffee", "chat.coffee", "cheer.coffee", "chess.coffee", 
- "complete.coffee", "conversation.coffee", "deadline.coffee", 
- "dealwithit.coffee", "devexcuse.coffee", "do-it.coffee", "doer_of_deeds.coffee",
- "good-night.coffee", "hackernews.coffee", "haskell.coffee", "hello.coffee"]
+[ "9gag.coffee"
+, "abstract.coffee"
+, "advice.coffee"
+, "applause.coffee"
+, "chat.coffee"
+, "cheer.coffee"
+, "chess.coffee"
+, "complete.coffee"
+, "conversation.coffee"
+, "deadline.coffee"
+, "dealwithit.coffee" 
+, "devexcuse.coffee" 
+, "do-it.coffee" 
+, "doer_of_deeds.coffee" 
+, "excuse.coffee"
+, "facepalm.coffee"
+, "faceup.coffee"
+, "good-night.coffee"
+, "hackernews.coffee" 
+, "haskell.coffee" 
+, "hello.coffee"
+, "remember.coffee"
+, "scrumnotes.coffee"
+, "wikipedia.coffee"
+, "tasks.coffee"
+, "working-on.coffee"
+, "urban.coffee"
+, "zen.coffee"
+]
