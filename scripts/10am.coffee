@@ -15,7 +15,7 @@ module.exports = (robot) ->
         kamis: "thu"
         jumat: "fri"
 
-    robot.respond /siapa yang bawa snack hari (.*)/i, (msg) ->
+    robot.respond /siapa yang bawa snack hari (\w+)/i, (msg) ->
         day = msg.match[1]
         pesan = " hari #{day} bawa snack ya :wink:"
         if day is "ini"
