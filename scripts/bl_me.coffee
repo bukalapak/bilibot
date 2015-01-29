@@ -9,7 +9,7 @@ blMe = (msg, query) ->
     .get() (err, res, body) ->
       json = JSON.parse(body)
       if json.status == "OK"
-        if json.products.length > 1
+        if json.products.length
           product = msg.random json.products
           msg.send product.url
         else
