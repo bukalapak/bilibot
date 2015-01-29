@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robot.respond /(bukalapak|bl) ( me)? (.*)/i, (msg) ->
+  robot.respond /(bukalapak|bl) (me)? (.*)/i, (msg) ->
     query = msg.match[3]
     blMe msg, query
 
