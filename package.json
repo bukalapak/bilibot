@@ -22,6 +22,7 @@
     "htmlparser": "1.7.6",
     "soupselect": "0.2.0",
     "chess": "0.2.5",
+    "csv-parse": "0.0.6",
     "xml2js": "0.1.14",
     "cheerio": "~0.12.0",
     "nodepie": "0.5.0",
