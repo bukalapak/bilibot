@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robot.respond /(bukalapak|bl) (me)? (.*)/i, (msg) ->
+  robot.respond /(bukalapak|bl)( me)? (.*)/i, (msg) ->
     query = msg.match[3]
     blMe msg, query
 
@@ -9,7 +9,7 @@ blMe = (msg, query) ->
     .get() (err, res, body) ->
       json = JSON.parse(body)
       if json.status == "OK"
-        if json.products.length > 1
+        if json.products.length
           product = msg.random json.products
           msg.send product.url
         else
