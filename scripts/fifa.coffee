@@ -28,12 +28,12 @@ module.exports = (robot) ->
           else
             msg.send "Ga ada pertandingan hari ini :sob:"
             
-  robot.respond /siapa cowok paling (ganteng|oke|jumawa|keren|hebat|sakti|jago|perkasa|bikin greget) se-bl/i, (msg) ->
+  robot.respond /siapa cowok paling (ganteng|oke|jumawa|keren|hebat|sakti|jago|perkasa|bikin greget) (se-|di )bl/i, (msg) ->
     getSheet msg, (err, arr) ->
        person = arr[1][1]
        msg.send "#{person} dong :kissing_heart:"
 
-  robot.respond /siapa cowok paling (cupu|lemah|ga oke|impoten|memble|lemcups) se-bl/i, (msg) ->
+  robot.respond /siapa cowok paling (cupu|lemah|ga oke|impoten|memble|lemcups) (se-|di )bl/i, (msg) ->
     getSheet msg, (err, arr) ->
       person = arr[14][1]
       insult = msg.match[1]
