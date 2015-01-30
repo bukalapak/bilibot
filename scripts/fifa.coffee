@@ -33,7 +33,7 @@ module.exports = (robot) ->
        person = arr[1][1]
        msg.send "#{person} dong :kissing_heart:"
 
-  robot.respond /siapa cowok paling (cupu|lemah|ga oke|impoten|memble|lemcups) (se-|di )bl/i, (msg) ->
+  robot.respond /siapa cowok paling (cupu|lemah|ga oke|impoten|memble|lemcups|payah) (se-|di )bl/i, (msg) ->
     getSheet msg, (err, arr) ->
       person = arr[14][1]
       insult = msg.match[1]
