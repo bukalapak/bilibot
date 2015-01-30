@@ -28,13 +28,16 @@ module.exports = (robot) ->
           else
             msg.send "Ga ada pertandingan hari ini :sob:"
             
-  robot.respond /siapa cowok paling (ganteng|oke|jumawa|keren|hebat|sakti|jago|perkasa) di bl/i, (msg) ->
+  robot.respond /siapa cowok paling (ganteng|oke|jumawa|keren|hebat|sakti|jago|perkasa) se-bl/i, (msg) ->
     getSheet msg, (err, arr) ->
-       msg.send arr[1][1]
+       person = arr[1][1]
+       msg.send "#{person} dong :kissing_heart:"
 
-  robot.respond /siapa cowok paling (cupu|lemah|ga oke|impoten|memble) di bl/i, (msg) ->
+  robot.respond /siapa cowok paling (cupu|lemah|ga oke|impoten|memble) se-bl/i, (msg) ->
     getSheet msg, (err, arr) ->
-      msg.send arr[14][1]
+      person = arr[14][1]
+      insult = msg.match[1]
+      msg.send "ah, #{person} #{insult} lo... "
 
 getSheet = (msg, callback) -> 
   msg.http("https://docs.google.com/a/bukalapak.com/spreadsheets/d/1GmyU4XTkaJEB4Dk4QHcW3dMKdMFtMPpngC8RNVNQvGk/export")
