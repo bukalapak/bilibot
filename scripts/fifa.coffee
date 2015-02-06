@@ -1,4 +1,11 @@
 parse = require('csv-parse')
+
+doubleDigit = (x) ->
+  if x > 9
+    x + ''
+  else
+    '0' + x
+
 module.exports = (robot) ->
   robot.respond /show me bl league table/i, (msg) ->
     msg.http("https://docs.google.com/a/bukalapak.com/spreadsheets/d/1GmyU4XTkaJEB4Dk4QHcW3dMKdMFtMPpngC8RNVNQvGk/export")
@@ -19,7 +26,8 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         parse body, {}, (err, arr) ->
           today = new Date()
-          todayStr = today.getDate() + '/0' + (today.getMonth() + 1) + '/' + today.getFullYear()
+          todayStr = doubleDigit(today.getDate()) + '/' + doubleDigit(today.getMonth() + 1) + '/' + today.getFullYear()
+          console.log todayStr
           schedules = []
           for line in arr
             do (line) ->
