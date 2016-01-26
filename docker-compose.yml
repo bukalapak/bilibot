@@ -1,0 +1,12 @@
+redis:
+  image: redis
+web:
+  build: .
+  command: ./bin/hubot --adapter slack
+  volumes:
+    - .:/code
+  links:
+    - redis
+  environment:
+    HUBOT_SLACK_TOKEN: 
+    REDIS_URL: redis
